@@ -1,0 +1,10 @@
+vim.opt.number = true
+vim.opt.hlsearch = true
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.ts = 4
+vim.opt.encoding = 'utf-8'
+vim.opt.foldlevelstart = 20
+vim.opt.hidden = true
+vim.opt.cmdheight = 3
+vim.opt.updatetime = 300
