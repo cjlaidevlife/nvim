@@ -4,6 +4,8 @@
 
 Customze my Neovim configuration with Lua.
 
+![image](https://user-images.githubusercontent.com/39592997/195999100-061d86b7-e2b4-4ad3-912f-6f90d95be292.png)
+
 ## Prerequisites 
 ### 1. Neovim
 ```bash 
@@ -32,3 +34,4 @@ $git clone git@github.com:s716134/nvim.git $HOME/.config/nvim
 $nvim                              # Note: open the nvim editor and run :PackerInstall
 $sudo apt install build-essential  # Note: intall cc fix 'nvim-treesitter' plugin error
 ```
+
