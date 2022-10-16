@@ -4,8 +4,10 @@ jobs:
   slackNotification:
     name: Slack Notification
     runs-on: ubuntu-latest
-
     steps:
+    - name: Add SHORT_SHA env property with commit short sha
+      id: dd
+      run: echo "SHORT_SHA=`echo ${{ github.event.head_commit.id }} | cut -c1-8`" >> $GITHUB_ENV
     - name: Send custom JSON data to Slack workflow
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
@@ -15,11 +17,40 @@ jobs:
           {
             "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
             "blocks": [
-              {
-                "type": "section",
-                "text": {
+            {
+              "type": "header",
+              "text": {
+                 "type": "plain_text",
+                 "text": ":robot_face: GitHub Action build result: ${{ job.status }}",
+                 "emoji": true
+               }
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
                   "type": "mrkdwn",
-                  "text": ":robot_face: GitHub Action build result: `${{ job.status }}`\n• repository: _${{ github.event.repository.full_name }}_\n• pusher: _${{ github.event.pusher.name }}_\n• author: _${{ github.event.head_commit.author.name }}_\n• committer: _${{ github.event.head_commit.committer.name }}_\n• message: `${{ github.event.head_commit.message }}`\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  "text": "• *repository:* ${{ github.event.repository.full_name }}"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "• *current branch:* ${{ env.BRANCH_NAME }}"
+                },
+               {
+                  "type": "mrkdwn",
+                  "text": "• *pusher:* ${{ github.event.pusher.name }}"
+                },
+               {
+                  "type": "mrkdwn",
+                  "text": "• *author:* ${{ github.event.head_commit.author.name }}"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "text": {
+                  "type": "mrkdwn",
+                  "text": "*message _<${{ github.event.pull_request.html_url || github.event.head_commit.url }}| # ${{ env.SHORT_SHA }}>_* ```${{ github.event.head_commit.message }}```"
                 }
               }
             ]
@@ -27,3 +58,4 @@ jobs:
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}        
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHO 
+        BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
