@@ -1,5 +1,5 @@
 on: push
-name: Slack Notification
+name: Slack Notification Demo
 jobs:
   slackNotification:
     name: Slack Notification
