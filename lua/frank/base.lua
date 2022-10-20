@@ -12,3 +12,4 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.cmdheight = 3
 vim.o.relativenumber = true
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
