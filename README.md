@@ -31,7 +31,7 @@ $nvm use v18.10.0
 ## How to use config
 ```bash 
 $git clone git@github.com:s716134/nvim.git $HOME/.config/nvim
-$nvim                              # Note: open the nvim editor and run :PackerInstall
+$nvim -c ":PackerInstall" -c ":q"  # Note: command run :PackerInstall
 $sudo apt install build-essential  # Note: intall cc fix 'nvim-treesitter' plugin error
 ```
 

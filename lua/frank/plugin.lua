@@ -33,6 +33,8 @@ vim.g.indentline_char_list  = { '|', '¦', '┆', '┊' }
 vim.g.coc_global_extensions = {'coc-solargraph'}
 vim.g.coc_global_extensions = {'coc-go'}
 vim.g.coc_global_extensions = {'coc-java'}
+vim.g.go_def_mode = {'gopls'}
+vim.g.go_info_mode = {'gopls'}
 
 vim.g.ale_sign_error = '✘'
 vim.g.ale_sign_warning = '⚠'
