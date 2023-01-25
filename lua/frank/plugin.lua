@@ -20,14 +20,14 @@ packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'                          -- note: web devicons.
   use 'ryanoasis/vim-devicons'                                -- note: web devicons.
   use 'projekt0n/circles.nvim'                                -- note: uniform icons for neovim.
-  use 'jiangmiao/auto-pairs'                                  -- note: 
-  use 'seblj/nvim-tabline'                                    -- note: 
+  use 'jiangmiao/auto-pairs'                                  -- note: auto pair the symbol. 
+  use 'seblj/nvim-tabline'                                    -- note: ai auto complete.
   use {'nvim-treesitter/nvim-treesitter', run = ':TSInstall'} -- note: interface for tree-sitter and some basic functionality. 
   use {'neoclide/coc.nvim', branch = 'release'}               -- note: Make your Vim/Neovim as smart as VSCode.
-  use {'fatih/vim-go', run = ':GoInstallBinaries'}            -- note: go plugin
-  use 'projekt0n/github-nvim-theme' 
-  use {'nvim-telescope/telescope.nvim', tag = '0.1.0'}
-  use 'nvim-lua/plenary.nvim'
+  use {'fatih/vim-go', run = ':GoInstallBinaries'}            -- note: let go take easily.
+  use 'projekt0n/github-nvim-theme'                           -- note: github theme. 
+  use {'nvim-telescope/telescope.nvim', tag = '0.1.0'}        -- note: for find file on vim. 
+  use 'nvim-lua/plenary.nvim'                                 -- note: telescope dependency packge.
 end)
 
 
