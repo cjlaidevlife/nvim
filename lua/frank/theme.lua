@@ -1,7 +1,7 @@
 -- Example config in Lua
 require("github-theme").setup({
   --theme_style = "dimmed",
-  theme_style = "dark_colorblind",
+  colorscheme = "dark_colorblind",
 
   function_style = "italic",
   sidebars = {"qf", "vista_kind", "terminal", "packer"},
