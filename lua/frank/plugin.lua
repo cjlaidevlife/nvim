@@ -25,7 +25,7 @@ packer.startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSInstall'} -- note: interface for tree-sitter and some basic functionality. 
   use {'neoclide/coc.nvim', branch = 'release'}               -- note: Make your Vim/Neovim as smart as VSCode.
   use {'fatih/vim-go', run = ':GoInstallBinaries'}            -- note: let go take easily.
-  use 'projekt0n/github-nvim-theme'                           -- note: github theme. 
+  --use 'projekt0n/github-nvim-theme'                           -- note: github theme. 
   use {'nvim-telescope/telescope.nvim', tag = '0.1.0'}        -- note: for find file on vim. 
   use 'nvim-lua/plenary.nvim'                                 -- note: telescope dependency packge.
 end)
