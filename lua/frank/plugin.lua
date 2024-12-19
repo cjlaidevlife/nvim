@@ -28,6 +28,7 @@ packer.startup(function(use)
   --use 'projekt0n/github-nvim-theme'                           -- note: github theme. 
   use {'nvim-telescope/telescope.nvim', tag = '0.1.0'}        -- note: for find file on vim. 
   use 'nvim-lua/plenary.nvim'                                 -- note: telescope dependency packge.
+  use 'github/copilot.vim'                                    -- note: copilot for vim.
 end)
 
 
